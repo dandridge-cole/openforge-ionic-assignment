@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { User } from '../../models/user'
-import { ListProvider } from '../../providers/list'
+// import { ListProvider } from '../../providers/list'
 
 @Component({
   selector: 'page-list',
@@ -11,11 +11,11 @@ export class ListPage {
   users: User[];
 
   constructor(
-    public navCtrl: NavController, 
-    listProvider:ListProvider
+    public navCtrl: NavController 
+    // ,listProvider:ListProvider
     ) 
     {
-      listProvider.loadList().subscribe(data => this.users = data);
+      // listProvider.loadList().subscribe(data => this.users = data);
     }
 
 }
