@@ -16,8 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    //ListPage,
-    // SearchPage,
+    ListPage,
+    SearchPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -30,8 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    // ListPage,
-    // SearchPage,
+    ListPage,
+    SearchPage,
     AboutPage,
     ContactPage,
     HomePage,
