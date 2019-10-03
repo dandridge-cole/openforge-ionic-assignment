@@ -5,11 +5,13 @@ import { Component } from '@angular/core';
 // import { HomePage } from '../home/home';
 import {ListPage } from '../list/list';
 import { SearchPage } from '../search/search'
+import { User } from '../../models/user';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
+  selectedUser:User;
 
   tab1Root = ListPage;
   tab2Root = SearchPage;

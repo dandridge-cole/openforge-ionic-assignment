@@ -40,4 +40,9 @@ export class ListPage {
         infiniteScroll.complete();
       }, 1000);
     }
+
+    userSelect(user:User) {
+      this.navCtrl.parent.selectedUser=user;
+      this.navCtrl.parent.select(2);
+    }
 }

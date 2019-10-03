@@ -7,7 +7,7 @@ import { User } from '../../models/user';
   templateUrl: 'search.html'
 })
 export class SearchPage {
-  selectedUser:User;
+ // selectedUser:User;
 
   constructor(public navCtrl: NavController) {
 
