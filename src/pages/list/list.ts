@@ -27,7 +27,6 @@ export class ListPage {
         error =>  this.errorMessage = <any>error);
     }
 
-
     doInfinite(infiniteScroll) {
       this.since = this.since+this.sinceIncrement;
       setTimeout(() => {

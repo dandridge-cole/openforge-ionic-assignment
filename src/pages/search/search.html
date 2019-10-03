@@ -7,12 +7,24 @@
   </ion-header>
   
   <ion-content>
-    <ion-searchbar (change)="search($event)"></ion-searchbar>
+    <ion-searchbar (change)="search($event)"><span *ngIf="this.navCtrl.parent.selectedUser!=null">{{this.navCtrl.parent.selectedUser.login}}</span></ion-searchbar>
     <ion-list>
-      <ion-list-header>Follow us on Twitter</ion-list-header>
+      <ion-list-header>Lorem Ipsum</ion-list-header>
       <ion-item>
         <ion-icon name="ionic" item-start></ion-icon>
-        @ionicframework
+        @dolorSit
+      </ion-item>
+      <ion-item *ngIf="this.navCtrl.parent.selectedUser!=null">
+        <ion-avatar item-left>
+          <img [src]="this.navCtrl.parent.selectedUser.avatar_url">
+        </ion-avatar>
+        <h2>Username: {{this.navCtrl.parent.selectedUser.login}}</h2>
+        <h2>Name: {{this.navCtrl.parent.selectedUser.name}}</h2>
+        <h2>Company: {{this.navCtrl.parent.selectedUser.company}}</h2>
+        <h2>Location: {{this.navCtrl.parent.selectedUser.location}}</h2>
+        <h2>Public Repos: {{this.navCtrl.parent.selectedUser.public_repos}}</h2>
+        <h2>Blog/Site: <a href="this.navCtrl.parent.selectedUser.blog">{{this.navCtrl.parent.selectedUser.blog}}</a></h2>
+        <p>Bio: {{this.navCtrl.parent.selectedUser.bio}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
