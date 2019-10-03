@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ListProvider {
     private apiUrl = 'https://api.github.com';
+    errorMessage:string;
 
     constructor(public httpc: HttpClient){}
 
@@ -18,6 +19,10 @@ export class ListProvider {
                 // .map(this.extractData)
                 // .catch(this.handleError)
                 ;
+    }
+
+    searchUserList(term: string): Observable<User[]> {
+      return this.httpc.get<User[]>(`${this.apiUrl}/search/users?q=${term}`);
     }
 
     private extractData(res: Response) {
