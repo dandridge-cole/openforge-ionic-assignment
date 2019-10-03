@@ -29,10 +29,11 @@ export class ListPage {
 
     doInfinite(infiniteScroll) {
       this.since = this.since+this.sinceIncrement;
+      var self=this;
       setTimeout(() => {
         this.listProvider.loadList(this.since)
            .subscribe(
-            data => this.users = data,
+            data => self.users.concat(data),
             error =>  this.errorMessage = <any>error);
     
         console.log('Async operation has ended');
@@ -43,5 +44,6 @@ export class ListPage {
     userSelect(user:User) {
       this.navCtrl.parent.selectedUser=user;
       this.navCtrl.parent.select(2);
+      console.log("userSelect was called")
     }
 }
