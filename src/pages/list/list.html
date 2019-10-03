@@ -10,13 +10,13 @@
     <ion-list>
       <ion-list-header>GitHub Users</ion-list-header>
       <ion-item *ngFor="let user of users"> <!--(click)="goToSearch(user.login)"-->
-        <ion-icon name="ionic" item-start>
+        <button ion-item name="ionic" item-start>
           <ion-avatar item-left>
             <img [src]="user.avatar_url">
           </ion-avatar>
           <h2>{{ user.login }}</h2>
-          <!-- <h2>{{user.public_repos}}</h2> -->
-        </ion-icon>
+          <h2>{{user.public_repos}}</h2>
+        </button>
       </ion-item>
     </ion-list>
   </ion-content>
