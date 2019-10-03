@@ -14,7 +14,7 @@
           <ion-avatar item-left>
             <img [src]="user.avatar_url">
           </ion-avatar>
-          <h2>{{ user.login }}</h2>
+          <h2 red-text="user.public_repos > 2">{{ user.login }}</h2>
           <h2>{{user.public_repos}}</h2>
         </button>
       </ion-item>
