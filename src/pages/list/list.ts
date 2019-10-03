@@ -15,7 +15,7 @@ export class ListPage {
      ,listProvider:ListProvider
     ) 
     {
-      // listProvider.loadList().subscribe(data => this.users = data);
+      listProvider.loadList().subscribe(data => this.users = data);
     }
 
 }

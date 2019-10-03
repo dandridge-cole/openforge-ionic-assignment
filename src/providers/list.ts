@@ -11,6 +11,6 @@ export class ListProvider {
     constructor(public httpc: HttpClient){}
 
     loadList(): Observable<User[]>{
-        return this.httpc.get<User[]>(`${this.apiUrl}/usersusers?since=135`);
+        return this.httpc.get<User[]>(`${this.apiUrl}/users?since=135`);
     }
 }
