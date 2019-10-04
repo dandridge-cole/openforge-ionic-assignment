@@ -8,7 +8,8 @@
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "e2e": "node_modules/.bin/cypress open"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
@@ -25,7 +26,6 @@
     "@ionic-native/status-bar": "~4.20.0",
     "@ionic/storage": "2.2.0",
     "@ngrx/store": "^8.3.0",
-    "cypress": "^3.4.1",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
     "rxjs": "5.5.11",
@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.2.2",
+    "chance": "^1.1.0",
+    "cypress": "^3.4.1",
     "typescript": "~2.6.2"
   },
   "description": "An Ionic project"
