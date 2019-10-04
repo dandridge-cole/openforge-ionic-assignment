@@ -15,7 +15,8 @@ describe('OpenForgeProject', ()=>{
     it('has a title', ()=> {
         // Assert List page text
         cy.contains('GitHub Users');
-        cy.get('button[]').click();
+        cy.get('button.item').first().click();
+        cy.contains('User Details')
         expect(2).to.equal(2)
     });
 });
