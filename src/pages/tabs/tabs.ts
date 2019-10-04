@@ -12,6 +12,7 @@ import { User } from '../../models/user';
 })
 export class TabsPage {
   selectedUser:User;
+  selectedLogin:string;
 
   tab1Root = ListPage;
   tab2Root = SearchPage;

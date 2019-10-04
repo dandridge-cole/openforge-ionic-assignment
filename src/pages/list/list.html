@@ -9,7 +9,7 @@
   <ion-content padding>
     <ion-list>
       <ion-list-header>GitHub Users</ion-list-header>
-      <ion-item *ngFor="let user of users" (click)="userSelect($user)"> <!--(click)="goToSearch(user.login)"-->
+      <ion-item *ngFor="let user of users" (click)="userSelect(user.login)"> <!--(click)="goToSearch(user.login)"-->
         <button ion-item name="ionic" item-start>
           <ion-avatar item-left>
             <img [src]="user.avatar_url">
