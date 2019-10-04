@@ -43,7 +43,7 @@ export class ListPage {
 
     userSelect(login:string) {
       this.navCtrl.parent.selectedLogin=login;
-      this.navCtrl.parent.select(2);
+      this.navCtrl.parent.select(1);
       console.log("userSelect was called");
       console.log(login);
     }
