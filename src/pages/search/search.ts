@@ -20,8 +20,12 @@ export class SearchPage {
   }
 
   search(searchEvent) {
+    console.log("search called");
+    console.log(searchEvent);
     let term = searchEvent.target.value
+    console.log("term: "+term);
     if (term.trim().length >= 2) {
+      console.log(this.navCtrl.parent.selectedLogin);
       this.listProvider.searchUserList(term).subscribe(
         result => {
           this.searchResults = result;
@@ -30,6 +34,7 @@ export class SearchPage {
           error =>  this.errorMessage = <any>error;
         }
       );
+      console.log("result: "+this.searchResults);
     }
   }
 }

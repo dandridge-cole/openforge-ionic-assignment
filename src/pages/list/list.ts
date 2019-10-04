@@ -41,10 +41,13 @@ export class ListPage {
       }, 1000);
     }
 
-    userSelect(login:string) {
+    userSelect(user:User) {
+      let login = user.login;
+      console.log("user: "+user);
+      console.log("login: "+user.login);
+      this.navCtrl.parent.selectedUser=user;
       this.navCtrl.parent.selectedLogin=login;
       this.navCtrl.parent.select(1);
       console.log("userSelect was called");
-      console.log(login);
     }
 }

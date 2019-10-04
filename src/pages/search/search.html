@@ -7,12 +7,11 @@
   </ion-header>
   
   <ion-content>
-    <ion-searchbar (change)="search($event)"><span *ngIf="this.navCtrl.parent.selectedUser!=null">{{this.navCtrl.parent.selectedUser.login}}</span></ion-searchbar>
+    <ion-searchbar (change)="search($event)" value="this.navCtrl.parent.selectedLogin"></ion-searchbar> <!--<span *ngIf="this.navCtrl.parent.selectedLogin!=null">{{this.navCtrl.parent.selectedLogin}}</span>-->
     <ion-list>
-      <ion-list-header>Lorem Ipsum</ion-list-header>
+      <ion-list-header>User Details</ion-list-header>
       <ion-item>
         <ion-icon name="ionic" item-start></ion-icon>
-        @dolorSit
       </ion-item>
       <ion-item *ngIf="this.navCtrl.parent.selectedUser!=null">
         <ion-avatar item-left>

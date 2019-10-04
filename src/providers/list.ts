@@ -22,7 +22,12 @@ export class ListProvider {
     }
 
     searchUserList(term: string): Observable<User[]> {
-      return this.httpc.get<User[]>(`${this.apiUrl}/search/users?q=${term}`);
+      console.log("searchUserList called");
+      let searchedUsers = this.httpc.get<User[]>(`${this.apiUrl}/search/users?q=${term}`);
+      let first = searchedUsers[0];
+      console.log("S.U: "+searchedUsers);
+      console.log("first: "+first);
+      return searchedUsers;
     }
 
     private extractData(res: Response) {
