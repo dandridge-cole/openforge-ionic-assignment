@@ -15,6 +15,7 @@
             <img [src]="user.avatar_url">
           </ion-avatar>
           <h2 red-text="user.public_repos > 2">{{ user.login }}</h2>
+          <!-- it appears that public_repos field is only available for individual user query, not for list.  In order to colorize text on the list, I believe we would need to loop through a series of individual queries and populate a map for that.-->
           <h2>{{user.public_repos}}</h2>
         </button>
       </ion-item>

@@ -9,6 +9,7 @@ import { ListProvider } from '../../providers/list'
 })
 export class ListPage {
   users: User[];
+  nextBatch: User[];
   errorMessage:string;
   since = 0;
   maxListId = 46;
@@ -30,30 +31,31 @@ export class ListPage {
 
     doInfinite(infiniteScroll) {
       this.since = this.users[this.users.length-1].id;
-      console.log("since: "+this.since);
-      var nextBatch:User[];
+      // console.log("since: "+this.since);
       setTimeout(() => {
         this.listProvider.loadList(this.since)
            .subscribe(
-            data => nextBatch = data,
+            data => this.nextBatch = data,
             error =>  this.errorMessage = <any>error);
         console.log('Async operation has ended');
+        // console.log("Next batch in1: "+this.nextBatch);
         infiniteScroll.complete();
+        // console.log("Next batch in2: "+this.nextBatch);
       }, 1000);
-      console.log(nextBatch);
-      //console.log("nextbatch length: "+nextBatch.length);
-      //console.log("nextBatch max ID: "+nextBatch[nextBatch.length-1].id);
-      this.users.concat(nextBatch);
-
+      console.log("Next batch out: "+this.nextBatch);
+      //console.log("nextbatch length: "+this.nextBatch.length);
+      //console.log("nextBatch max ID: "+this.nextBatch[nextBatch.length-1].id);
+      this.users.concat(this.nextBatch);
     }
 
     userSelect(user:User) {
       console.log("userSelect was called");
       let login = user.login;
-      console.log("user: "+user);
-      console.log("login: "+user.login);
-      console.log("list length: "+this.users.length);
-      console.log("since: "+this.since);
+      // console.log("click nexBatch: "+this.nextBatch);
+      // console.log("user: "+user);
+      // console.log("login: "+user.login);
+      // console.log("list length: "+this.users.length);
+      // console.log("since: "+this.since);
       //var detailedUser:User;
       this.listProvider.loadDetail(user.login).subscribe(data => this.navCtrl.parent.selectedUser = data);
       //console.log("detailedUser: "+detailedUser);
