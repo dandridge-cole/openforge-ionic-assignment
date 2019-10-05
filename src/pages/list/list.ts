@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 import { NavController } from 'ionic-angular';
-import { User } from '../../models/user'
-import { ListProvider } from '../../providers/list'
+import { Observable } from 'rxjs';
+import { loadNext } from '../../app/actions/list.actions';
+import { User } from '../../models/user';
+import { ListProvider } from '../../providers/list';
 
 @Component({
   selector: 'page-list',

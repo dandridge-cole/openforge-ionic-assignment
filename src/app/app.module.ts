@@ -13,7 +13,7 @@ import { SearchPage } from '../pages/search/search';
 // import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ListProvider } from '../providers/list'
-import { ListReducer } from '../app/reducers/list.reducer';
+import { listReducer } from './reducers/list.reducer';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    StoreModule.forRoot({ list:listReducer}),
     HttpModule
   ],
   bootstrap: [IonicApp],
