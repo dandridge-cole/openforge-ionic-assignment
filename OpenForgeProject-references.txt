@@ -1,0 +1,27 @@
+Solving SearchBar default value
+https://ionicframework.com/docs/api/searchbar 
+    -- read more about NgModel and ion-searchbar
+https://stackoverflow.com/questions/36071942/how-to-set-default-values-for-angular-2-component-properties
+
+Cypress testing
+https://docs.cypress.io/examples/examples/tutorials.html#Best-Practices
+https://angularfirebase.com/lessons/cypress-angular-testing-end-to-end/
+https://www.youtube.com/watch?v=eZyD-8qglWY
+https://blog.angularindepth.com/get-started-with-cypress-d6ac4b910605
+node_modules/.bin/cypress open
+
+Infinite Scroll
+https://ionicframework.com/docs/v3/api/components/infinite-scroll/InfiniteScroll/
+https://www.djamware.com/post/59b0ac0c80aca768e4d2b139/an-example-of-ionic-3-infinite-scroll-or-load-more
+
+GitHub User API
+https://developer.github.com/v3/users/#get-all-users
+
+NgRX store
+https://ngrx.io/guide/store
+https://stackabuse.com/beginners-guide-to-ngrx-and-angular/
+https://www.joshmorony.com/using-ngrx-for-state-management-in-an-ionic-angular-application/
+
+Tabs
+https://ionicframework.com/docs/v3/api/components/tabs/Tabs/
+

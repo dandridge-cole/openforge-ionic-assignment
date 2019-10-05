@@ -1,0 +1,9 @@
+1. Implement NgRX to manage state
+    a. infinite scroll list length and content
+    b. selected user
+2. Implement search
+3. Pre-populate selected user name in search box
+4. List text red based on # public repos
+    a. create a loop that makes an individual user api call for each member of list to get # public repos for each
+    b. Correct syntax for accessing angular directive
+5. More meaningful Cypress tests 
