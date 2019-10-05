@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+// import { Store, select } from '@ngrx/store';
 import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs';
-import { loadNext } from '../../app/actions/list.actions';
+// import { loadNext } from '../../app/actions/list.actions';
 import { User } from '../../models/user';
 import { ListProvider } from '../../providers/list';
 
@@ -11,7 +11,7 @@ import { ListProvider } from '../../providers/list';
   templateUrl: 'list.html'
 })
 export class ListPage {
-  list$: Observable<User[]>;
+  // list$: Observable<User[]>;
   users: User[];
   nextBatch: User[];
   errorMessage:string;

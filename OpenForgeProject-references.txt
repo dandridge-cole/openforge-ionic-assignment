@@ -1,3 +1,6 @@
+GitHub API rate limit:
+https://developer.github.com/v3/#rate-limiting
+
 Solving SearchBar default value
 https://ionicframework.com/docs/api/searchbar 
     -- read more about NgModel and ion-searchbar
