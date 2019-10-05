@@ -32,7 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot({ list:listReducer}),
+    // StoreModule.forRoot({ list:listReducer}),
     HttpModule
   ],
   bootstrap: [IonicApp],

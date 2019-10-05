@@ -19,18 +19,19 @@ export class ListPage {
   maxListId = 46;
   sinceIncrement = 30;
 
-  constructor(private store: Store<{list:User[]}>,
+  constructor(
+    // private store: Store<{list:User[]}>,
     public navCtrl: NavController 
      ,public listProvider:ListProvider
     ) 
     {
-      this.list$ = store.pipe(select('list'));
+      // this.list$ = store.pipe(select('list'));
       this.loadList();
     }
 
-    loadNext() {
-      this.store.dispatch(loadNext());
-    }
+    // loadNext() {
+    //   this.store.dispatch(loadNext());
+    // }
 
     loadList(){
       this.listProvider.loadList(this.since).subscribe(
