@@ -11,6 +11,7 @@ import { ListProvider } from '../../providers/list';
   templateUrl: 'list.html'
 })
 export class ListPage {
+  list$: Observable<User[]>;
   users: User[];
   nextBatch: User[];
   errorMessage:string;
@@ -18,12 +19,17 @@ export class ListPage {
   maxListId = 46;
   sinceIncrement = 30;
 
-  constructor(
+  constructor(private store: Store<{list:User[]}>,
     public navCtrl: NavController 
      ,public listProvider:ListProvider
     ) 
     {
+      this.list$ = store.pipe(select('list'));
       this.loadList();
+    }
+
+    loadNext() {
+      this.store.dispatch(loadNext());
     }
 
     loadList(){
