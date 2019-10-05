@@ -22,7 +22,7 @@
         <h2>Company: {{this.navCtrl.parent.selectedUser.company}}</h2>
         <h2>Location: {{this.navCtrl.parent.selectedUser.location}}</h2>
         <h2>Public Repos: {{this.navCtrl.parent.selectedUser.public_repos}}</h2>
-        <h2>Blog/Site: <a href="this.navCtrl.parent.selectedUser.blog">{{this.navCtrl.parent.selectedUser.blog}}</a></h2>
+        <h2>Blog/Site: <a [href]="this.navCtrl.parent.selectedUser.blog">{{this.navCtrl.parent.selectedUser.blog}}</a></h2>
         <p>Bio: {{this.navCtrl.parent.selectedUser.bio}}</p>
       </ion-item>
     </ion-list>
