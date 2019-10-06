@@ -33,7 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     // StoreModule.forRoot({ list:listReducer}),
-    StoreModule,
+    // StoreModule,
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -48,7 +48,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     ListProvider,
-    StoreModule,
+    // StoreModule,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
