@@ -9,7 +9,7 @@
     <ion-list>
       <ion-list-header>GitHub Users</ion-list-header>
       <!-- <page-list></page-list> -->
-      <ion-item *ngFor="let user of users" (click)="userSelect(user)"> <!--(click)="userSelect(user.login)"-->
+      <ion-item *ngFor="let user of this.listProvider.users$ | async" (click)="userSelect(user)"> <!--(click)="userSelect(user.login)"-->
         <button ion-item name="ionic" item-start>
           <ion-avatar item-left>
             <img [src]="user.avatar_url">
