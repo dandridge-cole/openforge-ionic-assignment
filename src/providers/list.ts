@@ -25,7 +25,9 @@ export class ListProvider {
     //const headers = new HttpHeaders().set("X-CustomHttpHeader", "CUSTOM_VALUE");
     //this.users$ = this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`, {headers});
     this.users$ = this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`);
-    console.log(this.users$.pipe())
+    console.log(this.users$.pipe());
+    //this.users$.last().subscribe(n=> this.since = n[0].id);  //TypeError: this.users$.last is not a function; but see https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
+    console.log(this.since);
   }
 
   parse_link_header(header){
