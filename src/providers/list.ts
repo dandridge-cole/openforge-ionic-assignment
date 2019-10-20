@@ -81,12 +81,14 @@ export class ListProvider {
   doInfinite(infiniteScroll): Observable<User[]>{
     //this.since = this.users$[this.users$.length-1].id; // doesn't work with observable, need to implement proper pagination.
     // console.log("since: "+this.since);
-    this.users$.last().subscribe(n=> this.since = n[0].id);  //seems like it's subscribing the whole list
+    //this.users$.last().subscribe(n=> this.since = n[0].id);  //seems like it's subscribing the whole list, so since is getting the first id instead of the last.
     //this.users$.last().subscribe(n=> console.log("last: "+n));
+    this.users$.last().pipe(tap(n=> this.since = n[0].id));  // trying out tap, but it seems it isn't getting any value here
+    this.users$.last().pipe(tap(n=> console.log("last: "+n)));
     console.log("Since: "+this.since);
     setTimeout(() => {
       //this.loadList();
-      this.users$.concat(this.users$,this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`));
+      this.users$.concat(this.users$,this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`)); // even though since is not being set properly, I don't understand why this doesn't double up the list.
       console.log('Async operation has ended');
       // console.log("Next batch in1: "+this.nextBatch);
       infiniteScroll.complete();
