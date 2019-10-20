@@ -81,7 +81,8 @@ export class ListProvider {
   doInfinite(infiniteScroll): Observable<User[]>{
     //this.since = this.users$[this.users$.length-1].id; // doesn't work with observable, need to implement proper pagination.
     // console.log("since: "+this.since);
-    this.users$.last().subscribe(n=> this.since = n[0].id);  //TypeError: this.users$.last is not a function; but see https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
+    this.users$.last().subscribe(n=> this.since = n[0].id);  //seems like it's subscribing the whole list
+    //this.users$.last().subscribe(n=> console.log("last: "+n));
     console.log("Since: "+this.since);
     setTimeout(() => {
       //this.loadList();
