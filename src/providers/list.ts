@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/last';
+import 'rxjs/add/operator/concat';
 
 @Injectable()
 export class ListProvider {
@@ -26,8 +28,6 @@ export class ListProvider {
     //this.users$ = this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`, {headers});
     this.users$ = this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`);
     console.log(this.users$.pipe());
-    //this.users$.last().subscribe(n=> this.since = n[0].id);  //TypeError: this.users$.last is not a function; but see https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
-    console.log(this.since);
   }
 
   parse_link_header(header){
@@ -81,8 +81,11 @@ export class ListProvider {
   doInfinite(infiniteScroll): Observable<User[]>{
     //this.since = this.users$[this.users$.length-1].id; // doesn't work with observable, need to implement proper pagination.
     // console.log("since: "+this.since);
+    this.users$.last().subscribe(n=> this.since = n[0].id);  //TypeError: this.users$.last is not a function; but see https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
+    console.log("Since: "+this.since);
     setTimeout(() => {
-      this.loadList();
+      //this.loadList();
+      this.users$.concat(this.users$,this.httpc.get<User[]>(`${this.apiUrl}/users?since=${this.since}`));
       console.log('Async operation has ended');
       // console.log("Next batch in1: "+this.nextBatch);
       infiniteScroll.complete();
