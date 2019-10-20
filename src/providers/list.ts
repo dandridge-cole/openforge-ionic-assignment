@@ -4,7 +4,7 @@ import { User } from '../models/user';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, takeLast } from 'rxjs/operators';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/last';
@@ -83,8 +83,9 @@ export class ListProvider {
     // console.log("since: "+this.since);
     //this.users$.last().subscribe(n=> this.since = n[0].id);  //seems like it's subscribing the whole list, so since is getting the first id instead of the last.
     //this.users$.last().subscribe(n=> console.log("last: "+n));
-    this.users$.last().pipe(tap(n=> this.since = n[0].id));  // trying out tap, but it seems it isn't getting any value here
-    this.users$.last().pipe(tap(n=> console.log("last: "+n)));
+    //this.users$.last().pipe(tap(n=> this.since = n[0].id));  // trying out tap, but it seems it isn't getting any value here
+    //this.users$.last().pipe(tap(n=> console.log("last: "+n)));
+    //this.users$.pipe(takeLast(1)).subscribe(n=> console.log("takeLast: "+n)); tried takeLast, but it's getting the whole list too, see https://rxjs-dev.firebaseapp.com/api/operators/takeLast
     console.log("Since: "+this.since);
     setTimeout(() => {
       //this.loadList();
